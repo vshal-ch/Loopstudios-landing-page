@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <title>Frontend Mentor | Loopstudios landing page</title>
+  </head>
+  <body>
+    <header>
+      <div class="wrapper">
+        <nav>
+          <img class="logo" src="./images/logo.svg" alt="logo" />
+          <ul class="nav-links">
+            <li class="nav-link">
+              <a href="#" class="link-text">About</a>
+            </li>
+            <li class="nav-link">
+              <a href="#" class="link-text">Careers</a>
+            </li>
+            <li class="nav-link">
+              <a href="#" class="link-text">Events</a>
+            </li>
+            <li class="nav-link">
+              <a href="#" class="link-text">Products</a>
+            </li>
+            <li class="nav-link">
+              <a href="#" class="link-text">Support</a>
+            </li>
+          </ul>
+          <img
+            src="./images/icon-hamburger.svg"
+            alt="hamburgur"
+            class="hamburgur"
+          />
+        </nav>
+        <section class="heading-container">
+          <div class="border">
+            <h1 class="title">Immersive experiences that deliver</h1>
+          </div>
+        </section>
+      </div>
+    </header>
+    <main>
+      <div class="wrapper">
+        <section class="comp-1">
+          <img src="./images/desktop/image-interactive.jpg" alt="interactive" />
+          <div class="text-content">
+            <h2 class="heading comp1">The leader in interactive VR</h2>
+            <p class="para">
+              Founded in 2011, Loopstudios has been producing world-class
+              virtual reality projects for some of the best companies around the
+              globe. Our award-winning creations have transformed businesses
+              through digital experiences that bind to their brand.
+            </p>
+          </div>
+        </section>
+        <section class="comp-2">
+          <h2 class="heading comp2">Our creations</h2>
+          <section class="grid">
+            <div class="image">
+              <h4 class="caption">Deep earth</h4>
+            </div>
+            <div class="image">
+              <h4 class="caption">night arcade</h4>
+            </div>
+            <div class="image">
+              <h4 class="caption">soccer team vr</h4>
+            </div>
+            <div class="image">
+              <h4 class="caption">the grid</h4>
+            </div>
+            <div class="image">
+              <h4 class="caption">from up above vr</h4>
+            </div>
+            <div class="image">
+              <h4 class="caption">pocket boreals</h4>
+            </div>
+            <div class="image">
+              <h4 class="caption">the curiosity</h4>
+            </div>
+            <div class="image">
+              <h4 class="caption">make it fisheye</h4>
+            </div>
+          </section>
+          <button class="see-all">SEE ALL</button>
+        </section>
+      </div>
+    </main>
+    <footer>
+      <div class="wrapper">
+        <div class="part1">
+          <img src="./images/logo.svg" alt="logo" />
+          <ul class="nav-links">
+            <li class="nav-link">
+              <a href="#" class="link-text">About</a>
+            </li>
+            <li class="nav-link">
+              <a href="#" class="link-text">Careers</a>
+            </li>
+            <li class="nav-link">
+              <a href="#" class="link-text">Events</a>
+            </li>
+            <li class="nav-link">
+              <a href="#" class="link-text">Products</a>
+            </li>
+            <li class="nav-link">
+              <a href="#" class="link-text">Support</a>
+            </li>
+          </ul>
+        </div>
+        <div class="part2">
+          <div class="logos">
+            <div class="icon-container">
+              <img class="icon" src="./images/icon-facebook.svg" alt="icon" />
+            </div>
+            <div class="icon-container">
+              <img class="icon" src="./images/icon-twitter.svg" alt="icon" />
+            </div>
+            <div class="icon-container">
+              <img class="icon" src="./images/icon-pinterest.svg" alt="icon" />
+            </div>
+            <div class="icon-container">
+              <img class="icon" src="./images/icon-instagram.svg" alt="icon" />
+            </div>
+          </div>
+          <p class="copyright">© 2021 Loopstudios. All rights reserved.</p>
+        </div>
+        <div class="attribution">
+          Challenge by
+          <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+            >Frontend Mentor</a
+          >. Coded by <a href="https://www.github.com/vshal-ch">Vishal</a>.
+        </div>
+      </div>
+    </footer>
+    <script>
+      const trigger = document.querySelector(".hamburgur");
+      const navLinks = document.querySelector("nav .nav-links");
+      const images = document.querySelectorAll(".image");
+
+      if (window.innerWidth >= 600) {
+        images.forEach(
+          (image) =>
+            (image.style.height = `${
+              image.getBoundingClientRect().width * 1.5
+            }px`)
+        );
+      }
+
+      function openNav() {
+        if (!navLinks.classList.contains("display")) {
+          trigger.setAttribute("src", "./images/icon-close.svg");
+          navLinks.classList.add("display");
+          setTimeout(() => {
+            if (navLinks.classList.contains("display")) {
+              navLinks.classList.add("opacity");
+            }
+          }, 150);
+        } else {
+          navLinks.classList.remove("display", "opacity");
+          trigger.setAttribute("src", "./images/icon-hamburger.svg");
+        }
+      }
+
+      trigger.addEventListener("click", openNav);
+      window.onresize = () => {
+        if (window.innerWidth >= 600) {
+          images.forEach(
+            (image) =>
+              (image.style.height = `${
+                image.getBoundingClientRect().width * 1.5
+              }px`)
+          );
+        }
+      };
+    </script>
+  </body>
+</html>

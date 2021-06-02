@@ -1,0 +1,664 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+.wrapper {
+  max-width: 1000px;
+  width: 90%;
+}
+
+header,
+main,
+footer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+header {
+  background: url("../images/mobile/image-hero.jpg") no-repeat center/cover;
+  height: 100vh;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+}
+nav .logo {
+  width: 140px;
+  z-index: 3;
+}
+nav .hamburgur {
+  width: 7%;
+  max-width: 15px;
+  z-index: 3;
+}
+nav .nav-links {
+  display: 0;
+  flex-direction: column;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  top: 0;
+  left: 0;
+  clip-path: circle(0% at 100% 0);
+  justify-content: center;
+  padding: 5%;
+  gap: 1rem;
+  transition: clip-path 0.6s cubic-bezier(0.98, 0.01, 0.57, 1.2);
+}
+nav .nav-links .link-text {
+  position: relative;
+  font-family: "Josefin Sans";
+  color: white;
+  text-decoration: none;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  opacity: 0;
+}
+nav .nav-links .link-text::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  top: 120%;
+  left: 0;
+  background-color: antiquewhite;
+  transform: scale(0);
+  transition: transform 0.4s cubic-bezier(0.68, -0.55, 0, -0.79);
+}
+nav .nav-links .link-text:hover::after {
+  transform: scale(1);
+}
+nav .nav-links.display {
+  display: flex;
+}
+nav .nav-links.display.opacity {
+  clip-path: circle(141.4% at 100% 0);
+}
+nav .nav-links.display.opacity .link-text {
+  opacity: 1;
+}
+
+.heading-container {
+  height: calc(100% - 21.6px - 2rem);
+  display: flex;
+  align-items: center;
+}
+.heading-container .border {
+  padding: 1rem;
+  border: 2px solid white;
+}
+.heading-container .border .title {
+  font-family: "Josefin Sans";
+  text-transform: uppercase;
+  color: white;
+  font-size: 2.2rem;
+}
+
+.comp-1 {
+  margin: 4rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+.comp-1 img {
+  width: 100%;
+}
+.comp-1 .text-content {
+  text-align: center;
+  width: 90%;
+}
+.comp-1 .heading {
+  font-family: "Josefin Sans";
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+.comp-1 .para {
+  font-family: Alata;
+  font-size: 0.8rem;
+  color: #8c8c8c;
+}
+
+.comp-2 {
+  display: grid;
+  grid-template-rows: auto auto auto;
+  row-gap: 1rem;
+  justify-items: center;
+  margin-bottom: 4rem;
+}
+.comp-2 .heading {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-family: "Josefin Sans";
+  text-transform: uppercase;
+}
+.comp-2 .grid {
+  display: grid;
+  grid-template-rows: repeat(8, auto);
+  gap: 1rem;
+  width: 100%;
+}
+.comp-2 .image {
+  width: 100%;
+  height: 90px;
+  padding: 1rem;
+  display: flex;
+  align-items: flex-end;
+  cursor: pointer;
+  transition: background-image 0.2s linear, background-size 0.2s linear;
+}
+.comp-2 .image .caption {
+  font-family: "Josefin Sans";
+  text-transform: uppercase;
+  color: white;
+  max-width: 90px;
+  transition: color 0.2s linear;
+}
+.comp-2 .image:nth-child(1) {
+  background: url("../images/mobile/image-1.jpg") no-repeat center;
+  background-size: 120%;
+}
+.comp-2 .image:nth-child(1):active, .comp-2 .image:nth-child(1):hover {
+  background: url("../images/mobile/image-1.jpg") no-repeat center, linear-gradient(0deg, #fff7, #fff7);
+  background-size: 120%;
+}
+.comp-2 .image:nth-child(1):active .caption, .comp-2 .image:nth-child(1):hover .caption {
+  color: black;
+}
+.comp-2 .image:nth-child(2) {
+  background: url("../images/mobile/image-2.jpg") no-repeat center;
+  background-size: 120%;
+}
+.comp-2 .image:nth-child(2):active, .comp-2 .image:nth-child(2):hover {
+  background: url("../images/mobile/image-2.jpg") no-repeat center, linear-gradient(0deg, #fff7, #fff7);
+  background-size: 120%;
+}
+.comp-2 .image:nth-child(2):active .caption, .comp-2 .image:nth-child(2):hover .caption {
+  color: black;
+}
+.comp-2 .image:nth-child(3) {
+  background: url("../images/mobile/image-3.jpg") no-repeat center;
+  background-size: 120%;
+}
+.comp-2 .image:nth-child(3):active, .comp-2 .image:nth-child(3):hover {
+  background: url("../images/mobile/image-3.jpg") no-repeat center, linear-gradient(0deg, #fff7, #fff7);
+  background-size: 120%;
+}
+.comp-2 .image:nth-child(3):active .caption, .comp-2 .image:nth-child(3):hover .caption {
+  color: black;
+}
+.comp-2 .image:nth-child(4) {
+  background: url("../images/mobile/image-4.jpg") no-repeat center;
+  background-size: 120%;
+}
+.comp-2 .image:nth-child(4):active, .comp-2 .image:nth-child(4):hover {
+  background: url("../images/mobile/image-4.jpg") no-repeat center, linear-gradient(0deg, #fff7, #fff7);
+  background-size: 120%;
+}
+.comp-2 .image:nth-child(4):active .caption, .comp-2 .image:nth-child(4):hover .caption {
+  color: black;
+}
+.comp-2 .image:nth-child(5) {
+  background: url("../images/mobile/image-5.jpg") no-repeat center;
+  background-size: 120%;
+}
+.comp-2 .image:nth-child(5):active, .comp-2 .image:nth-child(5):hover {
+  background: url("../images/mobile/image-5.jpg") no-repeat center, linear-gradient(0deg, #fff7, #fff7);
+  background-size: 120%;
+}
+.comp-2 .image:nth-child(5):active .caption, .comp-2 .image:nth-child(5):hover .caption {
+  color: black;
+}
+.comp-2 .image:nth-child(6) {
+  background: url("../images/mobile/image-6.jpg") no-repeat center;
+  background-size: 120%;
+}
+.comp-2 .image:nth-child(6):active, .comp-2 .image:nth-child(6):hover {
+  background: url("../images/mobile/image-6.jpg") no-repeat center, linear-gradient(0deg, #fff7, #fff7);
+  background-size: 120%;
+}
+.comp-2 .image:nth-child(6):active .caption, .comp-2 .image:nth-child(6):hover .caption {
+  color: black;
+}
+.comp-2 .image:nth-child(7) {
+  background: url("../images/mobile/image-7.jpg") no-repeat center;
+  background-size: 120%;
+}
+.comp-2 .image:nth-child(7):active, .comp-2 .image:nth-child(7):hover {
+  background: url("../images/mobile/image-7.jpg") no-repeat center, linear-gradient(0deg, #fff7, #fff7);
+  background-size: 120%;
+}
+.comp-2 .image:nth-child(7):active .caption, .comp-2 .image:nth-child(7):hover .caption {
+  color: black;
+}
+.comp-2 .image:nth-child(8) {
+  background: url("../images/mobile/image-8.jpg") no-repeat center;
+  background-size: 120%;
+}
+.comp-2 .image:nth-child(8):active, .comp-2 .image:nth-child(8):hover {
+  background: url("../images/mobile/image-8.jpg") no-repeat center, linear-gradient(0deg, #fff7, #fff7);
+  background-size: 120%;
+}
+.comp-2 .image:nth-child(8):active .caption, .comp-2 .image:nth-child(8):hover .caption {
+  color: black;
+}
+.comp-2 button {
+  grid-row: 3/4;
+  background-color: transparent;
+  border: 2px solid black;
+  font-family: Alata;
+  text-transform: uppercase;
+  width: 100px;
+  font-size: 0.9rem;
+  color: black;
+  padding: 4px 5px;
+}
+
+footer {
+  background-color: black;
+  padding: 3rem 0;
+  text-align: center;
+}
+footer .part1 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+footer .part1 img {
+  width: 140px;
+}
+footer .part1 .nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-family: Alata;
+  color: white;
+}
+footer .part1 .link-text {
+  color: white;
+  text-decoration: none;
+  font-size: 0.8rem;
+  position: relative;
+}
+footer .part1 .link-text::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  top: 120%;
+  left: 0;
+  background-color: antiquewhite;
+  transform: scale(0);
+  transition: transform 0.4s cubic-bezier(0.68, -0.55, 0, -0.79);
+}
+footer .part1 .link-text:hover::after {
+  transform: scale(1);
+}
+footer .part2 {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+footer .part2 .logos {
+  display: flex;
+  gap: 0.7rem;
+  justify-content: center;
+}
+footer .part2 .icon-container {
+  position: relative;
+}
+footer .part2 .icon-container .icon {
+  cursor: pointer;
+}
+footer .part2 .icon-container::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  top: 110%;
+  left: 0;
+  background-color: antiquewhite;
+  transform: scale(0);
+  transition: transform 0.4s cubic-bezier(0.68, -0.55, 0, -0.79);
+}
+footer .part2 .icon-container:hover::after {
+  transform: scale(1);
+}
+footer .part2 .copyright {
+  color: white;
+  font-family: Alata;
+  font-size: 0.8rem;
+}
+footer .attribution {
+  font-size: 11px;
+  text-align: center;
+  color: #8c8c8c;
+  font-family: Alata;
+}
+footer .attribution a {
+  color: white;
+  text-decoration: none;
+}
+
+@media screen and (min-width: 600px) {
+  ul {
+    list-style: none;
+  }
+
+  .wrapper {
+    max-width: 1000px;
+    width: 90%;
+  }
+
+  header,
+main,
+footer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  header {
+    background: url("../images/desktop/image-hero.jpg") no-repeat center/cover;
+    height: 500px;
+  }
+
+  nav {
+    margin-top: 3rem;
+  }
+  nav .logo {
+    width: 140px;
+  }
+  nav .hamburgur {
+    display: none;
+  }
+  nav .nav-links {
+    display: flex;
+    flex-direction: row;
+    position: static;
+    width: unset;
+    height: unset;
+    background-color: transparent;
+    top: 0;
+    left: 0;
+    clip-path: unset;
+    justify-content: center;
+    padding: 0;
+    gap: 1.5rem;
+    transition: clip-path 0.6s cubic-bezier(0.98, 0.01, 0.57, 1.2);
+  }
+  nav .nav-links .link-text {
+    font-family: Alata;
+    color: white;
+    text-decoration: none;
+    font-size: 0.8rem;
+    text-transform: capitalize;
+    opacity: 1;
+  }
+  nav .nav-links.display {
+    all: unset;
+  }
+  nav .nav-links.display.opacity {
+    all: unset;
+  }
+  nav .nav-links.display.opacity .link-text {
+    all: unset;
+  }
+
+  .heading-container {
+    height: calc(100% - 23.33px - 3rem);
+    display: flex;
+    align-items: center;
+  }
+  .heading-container .border {
+    padding: 1rem;
+    padding-bottom: 0.8rem;
+    border: 2px solid white;
+  }
+  .heading-container .border .title {
+    max-width: 300px;
+    line-height: 2.3rem;
+    font-size: 2.2rem;
+  }
+
+  .comp-1 {
+    margin: 4rem 0;
+    display: grid;
+    grid-template-columns: 5fr 1fr 4fr;
+    gap: 0;
+  }
+  .comp-1 img {
+    width: 100%;
+    grid-column: 1/3;
+    grid-row: 1/2;
+    min-width: 500px;
+  }
+  .comp-1 .text-content {
+    background-color: white;
+    grid-column: 2/5;
+    grid-row: 1/2;
+    text-align: left;
+    width: unset;
+    font-size: 1.3rem;
+    padding: 15% 0 0 15%;
+    max-width: 450px;
+    align-self: end;
+  }
+
+  .comp-2 {
+    display: grid;
+    grid-template-columns: 9fr auto;
+    grid-template-rows: auto auto;
+    row-gap: 2rem;
+    justify-items: start;
+    margin-bottom: 4rem;
+  }
+  .comp-2 .heading {
+    text-align: left;
+    grid-column: 1/2;
+    grid-row: 1/2;
+    margin-bottom: 0;
+  }
+  .comp-2 .grid {
+    display: grid;
+    grid-column: 1/3;
+    grid-row: 2/3;
+    grid-template-columns: repeat(4, auto);
+    grid-template-rows: repeat(2, auto);
+    gap: 1.2rem;
+    width: 100%;
+  }
+  .comp-2 .image {
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 2rem;
+    min-height: 214px;
+    transition: background-image 0.2s linear, background-size 0.2s linear;
+  }
+  .comp-2 .image .caption {
+    font-size: 1.3rem;
+    font-family: "Josefin Sans";
+    text-transform: uppercase;
+    color: white;
+    max-width: 110px;
+  }
+  .comp-2 .image:nth-child(1) {
+    background: url("../images/desktop/image-1.jpg") no-repeat center;
+    background-size: 100%;
+  }
+  .comp-2 .image:nth-child(1):active, .comp-2 .image:nth-child(1):hover {
+    background: linear-gradient(0deg, #fff7, #fff7), url("../images/desktop/image-1.jpg") no-repeat center;
+    background-size: 120%;
+  }
+  .comp-2 .image:nth-child(1):active .caption, .comp-2 .image:nth-child(1):hover .caption {
+    color: black;
+  }
+  .comp-2 .image:nth-child(2) {
+    background: url("../images/desktop/image-2.jpg") no-repeat center;
+    background-size: 100%;
+  }
+  .comp-2 .image:nth-child(2):active, .comp-2 .image:nth-child(2):hover {
+    background: linear-gradient(0deg, #fff7, #fff7), url("../images/desktop/image-2.jpg") no-repeat center;
+    background-size: 120%;
+  }
+  .comp-2 .image:nth-child(2):active .caption, .comp-2 .image:nth-child(2):hover .caption {
+    color: black;
+  }
+  .comp-2 .image:nth-child(3) {
+    background: url("../images/desktop/image-3.jpg") no-repeat center;
+    background-size: 100%;
+  }
+  .comp-2 .image:nth-child(3):active, .comp-2 .image:nth-child(3):hover {
+    background: linear-gradient(0deg, #fff7, #fff7), url("../images/desktop/image-3.jpg") no-repeat center;
+    background-size: 120%;
+  }
+  .comp-2 .image:nth-child(3):active .caption, .comp-2 .image:nth-child(3):hover .caption {
+    color: black;
+  }
+  .comp-2 .image:nth-child(4) {
+    background: url("../images/desktop/image-4.jpg") no-repeat center;
+    background-size: 100%;
+  }
+  .comp-2 .image:nth-child(4):active, .comp-2 .image:nth-child(4):hover {
+    background: linear-gradient(0deg, #fff7, #fff7), url("../images/desktop/image-4.jpg") no-repeat center;
+    background-size: 120%;
+  }
+  .comp-2 .image:nth-child(4):active .caption, .comp-2 .image:nth-child(4):hover .caption {
+    color: black;
+  }
+  .comp-2 .image:nth-child(5) {
+    background: url("../images/desktop/image-5.jpg") no-repeat center;
+    background-size: 100%;
+  }
+  .comp-2 .image:nth-child(5):active, .comp-2 .image:nth-child(5):hover {
+    background: linear-gradient(0deg, #fff7, #fff7), url("../images/desktop/image-5.jpg") no-repeat center;
+    background-size: 120%;
+  }
+  .comp-2 .image:nth-child(5):active .caption, .comp-2 .image:nth-child(5):hover .caption {
+    color: black;
+  }
+  .comp-2 .image:nth-child(6) {
+    background: url("../images/desktop/image-6.jpg") no-repeat center;
+    background-size: 100%;
+  }
+  .comp-2 .image:nth-child(6):active, .comp-2 .image:nth-child(6):hover {
+    background: linear-gradient(0deg, #fff7, #fff7), url("../images/desktop/image-6.jpg") no-repeat center;
+    background-size: 120%;
+  }
+  .comp-2 .image:nth-child(6):active .caption, .comp-2 .image:nth-child(6):hover .caption {
+    color: black;
+  }
+  .comp-2 .image:nth-child(7) {
+    background: url("../images/desktop/image-7.jpg") no-repeat center;
+    background-size: 100%;
+  }
+  .comp-2 .image:nth-child(7):active, .comp-2 .image:nth-child(7):hover {
+    background: linear-gradient(0deg, #fff7, #fff7), url("../images/desktop/image-7.jpg") no-repeat center;
+    background-size: 120%;
+  }
+  .comp-2 .image:nth-child(7):active .caption, .comp-2 .image:nth-child(7):hover .caption {
+    color: black;
+  }
+  .comp-2 .image:nth-child(8) {
+    background: url("../images/desktop/image-8.jpg") no-repeat center;
+    background-size: 100%;
+  }
+  .comp-2 .image:nth-child(8):active, .comp-2 .image:nth-child(8):hover {
+    background: linear-gradient(0deg, #fff7, #fff7), url("../images/desktop/image-8.jpg") no-repeat center;
+    background-size: 120%;
+  }
+  .comp-2 .image:nth-child(8):active .caption, .comp-2 .image:nth-child(8):hover .caption {
+    color: black;
+  }
+  .comp-2 button {
+    grid-row: 1/2;
+    grid-column: 2/3;
+    border: 1px solid dimgray;
+    width: 90px;
+    font-size: 0.8rem;
+    color: black;
+    padding: 3px 4px;
+  }
+
+  footer {
+    background-color: black;
+    padding: 2rem 0;
+    text-align: center;
+  }
+  footer .wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: end;
+    row-gap: 1rem;
+  }
+  footer .part1 {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+    margin-bottom: 0;
+  }
+  footer .part1 img {
+    width: 100px;
+  }
+  footer .part1 .nav-links {
+    display: flex;
+    flex-direction: row;
+    gap: 0.8rem;
+    font-family: Alata;
+    color: white;
+  }
+  footer .part1 .link-text {
+    color: white;
+    text-decoration: none;
+    font-size: 0.8rem;
+    text-align: left;
+  }
+  footer .part2 {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-bottom: 0;
+  }
+  footer .part2 .logos {
+    display: flex;
+    gap: 0.7rem;
+    justify-content: flex-end;
+  }
+  footer .part2 .logos .icon {
+    width: 15px;
+  }
+  footer .part2 .copyright {
+    color: white;
+    font-family: Alata;
+    font-size: 0.8rem;
+    text-align: right;
+  }
+  footer .attribution {
+    grid-column: 1/3;
+    font-size: 11px;
+    text-align: center;
+    color: #8c8c8c;
+    font-family: Alata;
+  }
+  footer .attribution a {
+    color: white;
+    text-decoration: none;
+  }
+}/*# sourceMappingURL=style.css.map */
